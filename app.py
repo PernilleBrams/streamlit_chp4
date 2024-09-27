@@ -24,7 +24,7 @@ Denne side viser data fra **Education at a Glance 2024** om internationale stude
 """, unsafe_allow_html=True)
 
 # Load data from EAG2024 (Chapter B4 Tables in report)
-data = pd.read_excel("/Users/pbrams/Desktop/DEA_streamlit/streamlit_chp4/masters.xlsx")
+data = pd.read_excel("masters.xlsx")
 
 
 # Cleaning and processing data
