@@ -103,9 +103,9 @@ else:
                          },
                          hover_name="Country",
                          hover_data={
-                            hover_2013: ':.2f',  # Round to 2 decimals
-                            hover_2022: ':.2f',  # Round to 2 decimals
-                            x_col: ':.2f',       # Round to 2 decimals for percentage change
+                            hover_2013: ':.1f',  # Round to 2 decimals
+                            hover_2022: ':.1f',  # Round to 2 decimals
+                            x_col: ':.1f',       # Round to 2 decimals for percentage change
                             'Color': False},        # Exclude color from hover},
                          labels={x_col: "Procentvis ændring (2013-2022) ", 
                                  y_col: "Andel af internationale studerende i 2022 (%) ",
