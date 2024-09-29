@@ -7,7 +7,6 @@ st.title("Internationale studerende i Danmark - et OECD-perspektiv")
 
 # Guide for how to use the app
 st.markdown("""
-## Vejledning:
 Denne side viser data fra **Education at a Glance 2024** om internationale studerende i Danmark ift. forskellige OECD-lande på niveau af kandidat- og bacheloruddannelser, samt alle videregående uddannelser samlet. 
 
 - **Nordiske lande**: Sverige, Norge, Finland, Island og Danmark.
