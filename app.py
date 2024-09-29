@@ -105,7 +105,8 @@ else:
                             hover_2013: ':.1f',  # Round to 2 decimals
                             hover_2022: ':.1f',  # Round to 2 decimals
                             x_col: ':.1f',       # Round to 2 decimals for percentage change
-                            'Color': False},        # Exclude color from hover},
+                            'Color': False,
+                            'Country': False},        # Exclude color from hover},
                          labels={x_col: "Procentvis ændring (2013-2022) ", 
                                  y_col: "Andel af internationale studerende i 2022 (%) ",
                                  hover_2013: "Andel af internationale studerende 2013 (%) ",
