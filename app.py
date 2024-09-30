@@ -159,3 +159,11 @@ else:
     st.plotly_chart(create_scatter_plot(filtered_data, "Change_ALL_TER", "ALL_TER_2022", 
                                        "Internationale studerende (Alle videregående udd.): Udvikling (2013-2022) vs Niveau i 2022", 
                                        "ALL_TER_2013", "ALL_TER_2022"))
+
+# Create a new plot for % of Masters (2022) vs % of Bachelors (2022)
+    st.plotly_chart(create_scatter_plot(filtered_data, 
+                                       x_col="MA_or_eq_2022", 
+                                       y_col="BA_or_eq_2022", 
+                                       title="Andel af internationale studerende (Kandidat vs Bachelor i 2022)",
+                                       hover_2013="MA_or_eq_2022", 
+                                       hover_2022="BA_or_eq_2022"))
