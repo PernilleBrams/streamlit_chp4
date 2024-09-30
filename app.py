@@ -89,42 +89,53 @@ else:
 
     # Updated scatter plot function with x and y axis labels as input
     def create_scatter_plot(filtered_data, x_col, y_col, title, hover_2013, hover_2022, x_label, y_label):
-        fig = px.scatter(filtered_data, x=x_col, y=y_col, text="Country",
-                         color="Color",  # Use the color column as a category
-                         color_discrete_map={
-                             'red': 'red',
-                             'orange': 'orange',
-                             'green': 'green',
-                             'gray': 'gray'
-                         },
-                         hover_name="Country",
-                         hover_data={
-                             hover_2013: ':.1f',  # Round to 2 decimals
-                             hover_2022: ':.1f',  # Round to 2 decimals
-                             'Color': False,
-                             'Country': False},  # Exclude color from hover
-                         labels={x_col: x_label, y_col: y_label})
+    fig = px.scatter(filtered_data, x=x_col, y=y_col, text="Country",
+                     color="Color",  # Use the color column as a category
+                     color_discrete_map={
+                         'red': 'red',
+                         'orange': 'orange',
+                         'green': 'green',
+                         'gray': 'gray'
+                     },
+                     hover_name="Country",
+                     hover_data={
+                         hover_2013: ':.1f',  # Round to 2 decimals
+                         hover_2022: ':.1f',  # Round to 2 decimals
+                         'Color': False,
+                         'Country': False},  # Exclude color from hover
+                     labels={x_col: x_label, y_col: y_label})
 
-        # Set plot title and subtitle combined
-        fig.update_traces(marker=dict(size=12, opacity=0.8), textposition='top center')
-        fig.update_layout(
-            title={
-                'text': title,
-                'y': 0.95,  # Adjust the vertical position of the title
-                'x': 0.5,
-                'xanchor': 'center',
-                'yanchor': 'top',
-                'pad': {'b': 40}  # Add bottom padding to raise the title
-            },
-            xaxis_title=x_label,
-            yaxis_title=y_label,
-            width=2000,
-            height=600,
-            showlegend=False  # Remove the legend
+    # Set plot title and subtitle combined
+    fig.update_traces(marker=dict(size=12, opacity=0.8), textposition='top center')
+    fig.update_layout(
+        title={
+            'text': title,
+            'y': 0.95,  # Adjust the vertical position of the title
+            'x': 0.5,
+            'xanchor': 'center',
+            'yanchor': 'top',
+            'pad': {'b': 40}  # Add bottom padding to raise the title
+        },
+        xaxis_title=x_label,
+        yaxis_title=y_label,
+        width=2000,
+        height=600,
+        showlegend=False  # Remove the legend
+    )
+
+    # Add a vertical line at x = 0
+    fig.add_shape(
+        dict(
+            type="line",
+            x0=0, x1=0,  # Start and end x position (vertical at x = 0)
+            y0=0, y1=1,  # Full height of the plot
+            xref='x', yref='paper',  # Use plot's x-axis and paper's y-axis (normalized from 0 to 1)
+            line=dict(color="black", width=2, dash="dash")  # Line style (dashed)
         )
+    )
 
-        return fig
-
+    return fig
+    
     # Add descriptions
     st.markdown("""
     **Data stammer fra Chapter B4 Tables i [Education at a Glance 2024](https://www.oecd.org/en/publications/education-at-a-glance-2024_c00cad36-en.html)**.
