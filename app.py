@@ -164,5 +164,5 @@ else:
                                        title="Andel af internationale studerende (Kandidat vs Bachelor i 2022)",
                                        hover_2013="MA_or_eq_2022", 
                                        hover_2022="BA_or_eq_2022",
-                                       x_label="Andel af internationale studerende i kandidatuddannelser (%)",
-                                       y_label="Andel af internationale studerende i bacheloruddannelser (%)"))
+                                       x_label="Andel af internationale studerende på kandidatuddannelser (%)",
+                                       y_label="Andel af internationale studerende på bacheloruddannelser (%)"))
