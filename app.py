@@ -7,7 +7,7 @@ st.title("Internationale studerende i Danmark - et OECD-perspektiv")
 
 # Guide for how to use app
 st.markdown("""
-Denne side viser data fra **Education at a Glance 2024** om internationale studerende i Danmark ift. forskellige OECD-lande på niveau af kandidat- og bacheloruddannelser, samt alle videregående uddannelser samlet. 
+Denne side viser data fra rapporten **Education at a Glance 2024, OECD** om internationale studerende i Danmark ift. forskellige OECD-lande på niveau af kandidat- og bacheloruddannelser, samt alle videregående uddannelser samlet. 
 
 - **Nordiske lande**: Sverige, Norge, Finland, Island og Danmark.
 - **Vesteuropæiske lande**: Tyskland, Frankrig, Holland, Belgien, Østrig, og Schweiz.
@@ -71,7 +71,7 @@ else:
     # Display highlighting options even if "Vis OECD Lande" is not selected
     st.sidebar.markdown("### Fremhæv specifikke lande:")
     highlight_scandinavia = st.sidebar.checkbox("Fremhæv Norge & Sverige", value=True)  # highlight Scandinavia checked by default
-    highlight_oecd_eu = st.sidebar.checkbox("Fremhæv OECD & EU Totals", value=False)
+    highlight_oecd_eu = st.sidebar.checkbox("Fremhæv OECD & EU totals", value=False)
 
     # Adjust the color mapping based on the toggle
     def color_map_fn(row):
@@ -138,7 +138,7 @@ else:
     
     # Add descriptions
     st.markdown("""
-    **Data stammer fra Chapter B4 Tables i [Education at a Glance 2024](https://www.oecd.org/en/publications/education-at-a-glance-2024_c00cad36-en.html)**.
+    **Datakilde: OECD (2024), Chapter B4 Tables (p. 242), [Education at a Glance 2024](https://www.oecd.org/en/publications/education-at-a-glance-2024_c00cad36-en.html) & OECD Data Explorer via Statlink (p. 242), URL, tilgået den 26. september 2024.**
     """)
 
     # Plots for each education level
