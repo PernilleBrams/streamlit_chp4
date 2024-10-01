@@ -212,12 +212,11 @@ st.plotly_chart(create_scatter_plot(filtered_data,
 # Final note
 st.markdown("""
 <div style='font-size:12px;'>
-<b>Landeinddeling på denne side:</b>
-<ul>
-  <li>Nordiske lande: Sverige, Norge, Finland, Island og Danmark.</li>
-  <li>Vesteuropæiske lande: Tyskland, Frankrig, Holland, Belgien, Østrig, Schweiz og Irland.</li>
-  <li>OECD-lande: Storbritannien, USA, Canada, Australien, New Zealand, Japan, Sydkorea, samt OECD og EU25 totaler.</li>
-</ul>
+<b>Landeinddeling på denne side:</b><br>
+- <b>Nordiske lande:</b> Sverige, Norge, Finland, Island og Danmark.<br>
+- <b>Vesteuropæiske lande:</b> Tyskland, Frankrig, Holland, Belgien, Østrig, Schweiz og Irland.<br>
+- <b>OECD-lande:</b> Storbritannien, USA, Canada, Australien, New Zealand, Japan, Sydkorea, samt OECD og EU25 totaler.
 </div>
 """, unsafe_allow_html=True)
+
 
