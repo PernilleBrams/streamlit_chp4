@@ -214,9 +214,9 @@ st.markdown("""
 <div style='font-size:12px;'>
 <b>Landeinddeling på denne side:</b>
 <ul>
-  <li><b>Nordiske lande:</b> Sverige, Norge, Finland, Island og Danmark.</li>
-  <li><b>Vesteuropæiske lande:</b> Tyskland, Frankrig, Holland, Belgien, Østrig, Schweiz og Irland.</li>
-  <li><b>OECD-lande:</b> Storbritannien, USA, Canada, Australien, New Zealand, Japan, Sydkorea, samt OECD og EU25 totaler.</li>
+  <li>Nordiske lande: Sverige, Norge, Finland, Island og Danmark.</li>
+  <li>Vesteuropæiske lande: Tyskland, Frankrig, Holland, Belgien, Østrig, Schweiz og Irland.</li>
+  <li>OECD-lande: Storbritannien, USA, Canada, Australien, New Zealand, Japan, Sydkorea, samt OECD og EU25 totaler.</li>
 </ul>
 </div>
 """, unsafe_allow_html=True)
