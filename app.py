@@ -194,7 +194,9 @@ st.plotly_chart(create_scatter_plot(filtered_data,
                                     hover_second_label="Andel af internationale studerende i 2022 (%)"))
 
 st.markdown("""
-**Som en sidste visualisering, er der her vist andelen af internationale studerende på hhv. kandidat og bachelorniveau i 2022 alene.** Bemærk, at akserne nu har ændret sig:
+**Som en sidste visualisering, er der her vist andelen af internationale studerende på hhv. kandidat og bachelorniveau i 2022 alene.** 
+
+Bemærk, at akserne nu har ændret sig:
 """)
         
 # Create a new plot for % of Masters (2022) vs % of Bachelors (2022)
