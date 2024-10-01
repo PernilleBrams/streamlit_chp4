@@ -223,7 +223,8 @@ st.markdown("""
 
 # Name
 st.markdown("""
-<div style='text-align: center; color: lightgrey;'>
+<div style='margin-top: 50px; text-align: center; color: lightgrey;'>
     By Pernille Brams
 </div>
 """, unsafe_allow_html=True)
+
