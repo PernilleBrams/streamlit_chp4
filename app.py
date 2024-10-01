@@ -89,7 +89,16 @@ def color_map_fn(row):
 filtered_data['Color'] = filtered_data.apply(color_map_fn, axis=1)
 
 # Updated scatter plot function with x and y axis labels as input
-def create_scatter_plot(filtered_data, x_col, y_col, title, hover_2013, hover_2022, x_label, y_label):
+def create_scatter_plot(filtered_data, 
+                        x_col, 
+                        y_col, 
+                        title, 
+                        hover_2013,
+                        hover_2022, 
+                        x_label, 
+                        y_label,
+                        hover_first_label,
+                        hover_second_label):
     fig = px.scatter(
         filtered_data, 
         x=x_col, 
@@ -113,8 +122,8 @@ def create_scatter_plot(filtered_data, x_col, y_col, title, hover_2013, hover_20
         labels={
             x_col: x_label, 
             y_col: y_label,
-            hover_2013: "Andel af internationale studerende i 2013 (%)",  # label for 2013 data
-            hover_2022: "Andel af internationale studerende i 2022 (%)"   # label for 2022 data
+            hover_2013: hover_first_label, #"Andel af internationale studerende i 2013 (%)",  # label for 2013 data
+            hover_2022: hover_second_label, #"Andel af internationale studerende i 2022 (%)"   # label for 2022 data
         }
     )
 
@@ -155,21 +164,43 @@ st.markdown("""
 """)
 
 # Plots for each education level
-st.plotly_chart(create_scatter_plot(filtered_data, "Change_MA", "MA_or_eq_2022", 
-                                   "Internationale studerende (Kandidatuddannelser): Udvikling (2013-2022) vs niveau i 2022", 
-                                   "MA_or_eq_2013", "MA_or_eq_2022",
-                                   "Procentvis ændring (2013-2022)", "Andel af internationale studerende i 2022 (%)"))
+st.plotly_chart(create_scatter_plot(filtered_data, 
+                                    x_col = "Change_MA", 
+                                    y_col = "MA_or_eq_2022", 
+                                    title = "Internationale studerende (Kandidatuddannelser): Udvikling (2013-2022) vs niveau i 2022", 
+                                    hover_2013 = "MA_or_eq_2013", 
+                                    hover_2022 = "MA_or_eq_2022",
+                                    x_label = "Procentvis ændring (2013-2022)", 
+                                    y_label = "Andel af internationale studerende i 2022 (%)",
+                                    hover_first_label = "Andel af internationale studerende i 2013 (%)",
+                                    hover_second_label = "Andel af internationale studerende i 2022 (%)"))
 
-st.plotly_chart(create_scatter_plot(filtered_data, "Change_BA", "BA_or_eq_2022", 
-                                   "Internationale studerende (Bacheloruddannelser): Udvikling (2013-2022) vs niveau i 2022", 
-                                   "BA_or_eq_2013", "BA_or_eq_2022",
-                                   "Procentvis ændring (2013-2022)", "Andel af internationale studerende i 2022 (%)"))
+st.plotly_chart(create_scatter_plot(filtered_data, 
+                                    x_col = "Change_BA", 
+                                    y_col = "BA_or_eq_2022", 
+                                    title = "Internationale studerende (Bacheloruddannelser): Udvikling (2013-2022) vs niveau i 2022", 
+                                    hover_2013 = "BA_or_eq_2013", 
+                                    hover_2022 = "BA_or_eq_2022",
+                                    x_label = "Procentvis ændring (2013-2022)", 
+                                    y_label = "Andel af internationale studerende i 2022 (%)",
+                                    hover_first_label = "Andel af internationale studerende i 2013 (%)",
+                                    hover_second_label = "Andel af internationale studerende i 2022 (%)"))
 
-st.plotly_chart(create_scatter_plot(filtered_data, "Change_ALL_TER", "ALL_TER_2022", 
-                                   "Internationale studerende (Alle videregående udd.): Udvikling (2013-2022) vs niveau i 2022", 
-                                    "ALL_TER_2013", "ALL_TER_2022",
-                                    "Procentvis ændring (2013-2022)", "Andel af internationale studerende i 2022 (%)"))
-                                   
+st.plotly_chart(create_scatter_plot(filtered_data, 
+                                    x_col = "Change_ALL_TER", 
+                                    y_col = "ALL_TER_2022", 
+                                    title = "Internationale studerende (Alle videregående udd.): Udvikling (2013-2022) vs niveau i 2022", 
+                                    hover_2013 = "ALL_TER_2013", 
+                                    hover_2022 = "ALL_TER_2022",
+                                    x_label = "Procentvis ændring (2013-2022)", 
+                                    y_label = "Andel af internationale studerende i 2022 (%)",
+                                    hover_first_label = "Andel af internationale studerende i 2013 (%)",
+                                    hover_second_label = "Andel af internationale studerende i 2022 (%)"))
+
+st.markdown("""
+**Som en sidste visualisering, er der her vist andelen af internationale studerende på hhv. kandidat og bachelorniveau i 2022 alene. Bemærk, at akserne nu har ændret sig:**
+""")
+        
 # Create a new plot for % of Masters (2022) vs % of Bachelors (2022)
 st.plotly_chart(create_scatter_plot(filtered_data, 
                                     x_col="MA_or_eq_2022", 
@@ -178,4 +209,6 @@ st.plotly_chart(create_scatter_plot(filtered_data,
                                     hover_2013="MA_or_eq_2022", 
                                     hover_2022="BA_or_eq_2022",
                                     x_label="Andel af internationale studerende på kandidatuddannelser (%)",
-                                    y_label="Andel af internationale studerende på bacheloruddannelser (%)"))
+                                    y_label="Andel af internationale studerende på bacheloruddannelser (%)",
+                                    hover_first_label = "Andel af internationale kandidatstuderende i 2022 (%)",
+                                    hover_second_label = "Andel af internationale bachelorstuderende i 2022 (%)"))
