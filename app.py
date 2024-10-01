@@ -90,21 +90,33 @@ filtered_data['Color'] = filtered_data.apply(color_map_fn, axis=1)
 
 # Updated scatter plot function with x and y axis labels as input
 def create_scatter_plot(filtered_data, x_col, y_col, title, hover_2013, hover_2022, x_label, y_label):
-    fig = px.scatter(filtered_data, x=x_col, y=y_col, text="Country",
-                    color="Color",  # Use the color column as a category
-                    color_discrete_map={
-                        'red': 'red',
-                        'orange': 'orange',
-                        'green': 'green',
-                        'gray': 'gray'
-                    },
-                    hover_name="Country",
-                    hover_data={
-                        hover_2013: ':.1f',  # Round to 1 decimal
-                        hover_2022: ':.1f',  # Round to 1 decimal
-                        'Color': False,
-                        'Country': False},  # Exclude color from hover
-                    labels={x_col: x_label, y_col: y_label})
+    fig = px.scatter(
+        filtered_data, 
+        x=x_col, 
+        y=y_col, 
+        text="Country",
+        color="Color",  # Use the color column as a category
+        color_discrete_map={
+            'red': 'red',
+            'orange': 'orange',
+            'green': 'green',
+            'gray': 'gray'
+        },
+        hover_name="Country",
+        hover_data={
+            hover_2013: ':.1f',  # Round to 1 decimals
+            hover_2022: ':.1f',  # Round to 1 decimals
+            x_col: ':.1f',       # Round %-change to 1 decimal place as well
+            'Color': False,
+            'Country': False
+        },
+        labels={
+            x_col: x_label, 
+            y_col: y_label,
+            hover_2013: "Andel af internationale studerende i 2013 (%)",  # label for 2013 data
+            hover_2022: "Andel af internationale studerende i 2022 (%)"   # label for 2022 data
+        }
+    )
 
     # Set plot title and subtitle combined
     fig.update_traces(marker=dict(size=12, opacity=0.8), textposition='top center')
