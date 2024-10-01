@@ -223,8 +223,9 @@ st.markdown("""
 
 # Name
 st.markdown("""
-<div style='margin-top: 50px; text-align: center; color: lightgrey;'>
-    By Pernille Brams<br>
-    <a href='https://www.linkedin.com/in/pernille-h%C3%B8jlund-brams/' style='color: lightgrey;' target='_blank'>Connect with me on LinkedIn</a>
+<div style='margin-top: 65px; text-align: center; color: lightgrey;'>
+    <a href='https://www.linkedin.com/in/pernille-h%C3%B8jlund-brams/' target='_blank' style='color: lightgrey; text-decoration: none;'>
+        By Pernille Brams
+    </a>
 </div>
 """, unsafe_allow_html=True)
