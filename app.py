@@ -221,4 +221,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-
+# Name
+st.markdown("""
+<div style='text-align: center; color: lightgrey;'>
+    By Pernille Brams
+</div>
+""", unsafe_allow_html=True)
