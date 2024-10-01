@@ -8,11 +8,7 @@ st.title("Internationale studerende i Danmark - et OECD-perspektiv")
 
 # Guide for how to use the app
 st.markdown("""
-Denne side viser data fra rapporten **Education at a Glance 2024, OECD** om internationale studerende i Danmark ift. forskellige OECD-lande på niveau af kandidat- og bacheloruddannelser, samt alle videregående uddannelser samlet. 
-
-- **Nordiske lande**: Sverige, Norge, Finland, Island og Danmark.
-- **Vesteuropæiske lande**: Tyskland, Frankrig, Holland, Belgien, Østrig, Schweiz og Irland.
-- **OECD-lande**: Storbritannien, USA, Canada, Australien, New Zealand, Japan, Sydkorea, samt OECD og EU25 totaler.
+Denne side visualiserer data fra rapporten **Education at a Glance 2024, OECD** om internationale studerende i Danmark ift. forskellige OECD-lande på niveau af kandidat- og bacheloruddannelser, samt alle videregående uddannelser samlet. 
 
 ### Sådan bruger du siden:
 1. Vælg de regioner, du vil se på graferne ved at bruge afkrydsningsfelterne i sidebaren til venstre.
@@ -165,40 +161,40 @@ st.markdown("""
 
 # Plots for each education level
 st.plotly_chart(create_scatter_plot(filtered_data, 
-                                    x_col = "Change_MA", 
-                                    y_col = "MA_or_eq_2022", 
-                                    title = "Internationale studerende (Kandidatuddannelser): Udvikling (2013-2022) vs niveau i 2022", 
-                                    hover_2013 = "MA_or_eq_2013", 
-                                    hover_2022 = "MA_or_eq_2022",
-                                    x_label = "Procentvis ændring (2013-2022)", 
-                                    y_label = "Andel af internationale studerende i 2022 (%)",
-                                    hover_first_label = "Andel af internationale studerende i 2013 (%)",
-                                    hover_second_label = "Andel af internationale studerende i 2022 (%)"))
+                                    x_col="Change_MA", 
+                                    y_col="MA_or_eq_2022", 
+                                    title="Internationale studerende (Kandidatuddannelser): Udvikling (2013-2022) vs niveau i 2022", 
+                                    hover_2013="MA_or_eq_2013", 
+                                    hover_2022="MA_or_eq_2022",
+                                    x_label="Procentvis ændring (2013-2022)", 
+                                    y_label="Andel af internationale studerende i 2022 (%)",
+                                    hover_first_label="Andel af internationale studerende i 2013 (%)",
+                                    hover_second_label="Andel af internationale studerende i 2022 (%)"))
 
 st.plotly_chart(create_scatter_plot(filtered_data, 
-                                    x_col = "Change_BA", 
-                                    y_col = "BA_or_eq_2022", 
-                                    title = "Internationale studerende (Bacheloruddannelser): Udvikling (2013-2022) vs niveau i 2022", 
-                                    hover_2013 = "BA_or_eq_2013", 
-                                    hover_2022 = "BA_or_eq_2022",
-                                    x_label = "Procentvis ændring (2013-2022)", 
-                                    y_label = "Andel af internationale studerende i 2022 (%)",
-                                    hover_first_label = "Andel af internationale studerende i 2013 (%)",
-                                    hover_second_label = "Andel af internationale studerende i 2022 (%)"))
+                                    x_col="Change_BA", 
+                                    y_col="BA_or_eq_2022", 
+                                    title="Internationale studerende (Bacheloruddannelser): Udvikling (2013-2022) vs niveau i 2022", 
+                                    hover_2013="BA_or_eq_2013", 
+                                    hover_2022="BA_or_eq_2022",
+                                    x_label="Procentvis ændring (2013-2022)", 
+                                    y_label="Andel af internationale studerende i 2022 (%)",
+                                    hover_first_label="Andel af internationale studerende i 2013 (%)",
+                                    hover_second_label="Andel af internationale studerende i 2022 (%)"))
 
 st.plotly_chart(create_scatter_plot(filtered_data, 
-                                    x_col = "Change_ALL_TER", 
-                                    y_col = "ALL_TER_2022", 
-                                    title = "Internationale studerende (Alle videregående udd.): Udvikling (2013-2022) vs niveau i 2022", 
-                                    hover_2013 = "ALL_TER_2013", 
-                                    hover_2022 = "ALL_TER_2022",
-                                    x_label = "Procentvis ændring (2013-2022)", 
-                                    y_label = "Andel af internationale studerende i 2022 (%)",
-                                    hover_first_label = "Andel af internationale studerende i 2013 (%)",
-                                    hover_second_label = "Andel af internationale studerende i 2022 (%)"))
+                                    x_col="Change_ALL_TER", 
+                                    y_col="ALL_TER_2022", 
+                                    title="Internationale studerende (Alle videregående udd.): Udvikling (2013-2022) vs niveau i 2022", 
+                                    hover_2013="ALL_TER_2013", 
+                                    hover_2022="ALL_TER_2022",
+                                    x_label="Procentvis ændring (2013-2022)", 
+                                    y_label="Andel af internationale studerende i 2022 (%)",
+                                    hover_first_label="Andel af internationale studerende i 2013 (%)",
+                                    hover_second_label="Andel af internationale studerende i 2022 (%)"))
 
 st.markdown("""
-**Som en sidste visualisering, er der her vist andelen af internationale studerende på hhv. kandidat og bachelorniveau i 2022 alene. Bemærk, at akserne nu har ændret sig:**
+**Som en sidste visualisering, er der her vist andelen af internationale studerende på hhv. kandidat og bachelorniveau i 2022 alene.** Bemærk, at akserne nu har ændret sig:
 """)
         
 # Create a new plot for % of Masters (2022) vs % of Bachelors (2022)
@@ -212,3 +208,15 @@ st.plotly_chart(create_scatter_plot(filtered_data,
                                     y_label="Andel af internationale studerende på bacheloruddannelser (%)",
                                     hover_first_label = "Andel af internationale kandidatstuderende i 2022 (%)",
                                     hover_second_label = "Andel af internationale bachelorstuderende i 2022 (%)"))
+
+# Final note
+st.markdown("""
+<div style='font-size:12px;'>
+<b>Landeinddeling på denne side:</b>
+<ul>
+<li><b>Nordiske lande:</b> Sverige, Norge, Finland, Island og Danmark.</li>
+<li><b>Vesteuropæiske lande:</b> Tyskland, Frankrig, Holland, Belgien, Østrig, Schweiz og Irland.</li>
+<li><b>OECD-lande:</b> Storbritannien, USA, Canada, Australien, New Zealand, Japan, Sydkorea, samt OECD og EU25 totaler.</li>
+</ul>
+</div>
+""", unsafe_allow_html=True)
