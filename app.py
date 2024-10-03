@@ -46,8 +46,8 @@ st.sidebar.markdown("### Vælg mindst én af disse kategorier:")
 
 # Streamlit Sidebar checkboxes for toggling regions (Nordic is checked by default)
 show_nordic = st.sidebar.checkbox("Vis nordiske lande", value=True, disabled=True)
-show_western = st.sidebar.checkbox("Vis vesteuropæiske lande", value=False)
-show_oecd = st.sidebar.checkbox("Vis OECD lande", value=False)
+show_western = st.sidebar.checkbox("Vis udvalgte vesteuropæiske lande", value=False)
+show_oecd = st.sidebar.checkbox("Vis udvalgte OECD lande", value=False)
 show_all = st.sidebar.checkbox("Vis alle lande", value=False)
 
 # Check if at least one region is selected
@@ -68,7 +68,7 @@ filtered_data = data[data['Country'].isin(comparison_countries)]
 # Display highlighting options even if "Vis OECD Lande" is not selected
 st.sidebar.markdown("### Fremhæv specifikke lande:")
 highlight_scandinavia = st.sidebar.checkbox("Fremhæv Norge & Sverige", value=True)  # Highlight Scandinavia checked by default
-highlight_oecd_eu = st.sidebar.checkbox("Fremhæv OECD & EU totals", value=False)
+highlight_oecd_eu = st.sidebar.checkbox("Fremhæv OECD & EU gennemsnit", value=False)
 
 # Adjust the color mapping based on the toggle
 def color_map_fn(row):
@@ -156,7 +156,7 @@ def create_scatter_plot(filtered_data,
 
 # Add descriptions
 st.markdown("""
-**Datakilde: OECD (2024), Chapter B4 Tables (p. 242), [Education at a Glance 2024](https://www.oecd.org/en/publications/education-at-a-glance-2024_c00cad36-en.html) & OECD Data Explorer via Statlink (p. 242), URL, tilgået den 26. september 2024.**
+**Datakilde: OECD (2024), Chapter B4 Tables (p. 242), [Education at a Glance 2024](https://www.oecd.org/en/publications/education-at-a-glance-2024_c00cad36-en.html) & OECD Data Explorer via Statlink (p. 242), tilgået den 26. september 2024.**
 """)
 
 # Plots for each education level
